@@ -1,8 +1,8 @@
 // Setting up Global Variables
 
-var searchInput = "obama";
-var beginYear = 2008;
-var endYear = 2009;
+var searchInput = "giants";
+var beginYear = 2015;
+var endYear = 2016;
 var resultAmount = 5;
 
 // AJAX Callout for Requesting Data

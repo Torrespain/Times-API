@@ -1,16 +1,38 @@
 // Setting up Global Variables
 
-var searchInput = "";
-var beginYear = 0;
-var endYear = 0;
-var resultAmount = 0;
+var searchInput = "obama";
+var beginYear = 2008;
+var endYear = 2009;
+var resultAmount = 5;
 
 // AJAX Callout for Requesting Data
 
 var apiKey = "?api-key=cf9a21c9efdc4b95bd59f3d57b679d20"
 
-var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json" + apiKey
+var baseURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json" + apiKey
 
-// $.ajax({
-//   url: url,
-//   method: 'GET',
+function articleSearch(){
+
+  queryURL = baseURL + "&" + "q=" + searchInput + "&begin_date=" + beginYear + "0101" + "&end_date=" + endYear + "0101"
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+    }).then(function(response) {
+
+      console.log(response)
+    });
+
+
+}
+
+articleSearch()
+
+
+
+
+//   var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+// url += '?' + $.param({
+//   'api-key': "cf9a21c9efdc4b95bd59f3d57b679d20",
+//   'q':
+//   'begin_date':
+//   'end_date':
